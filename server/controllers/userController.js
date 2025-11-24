@@ -84,7 +84,7 @@ export const login = async (req, res)=>{
     }
 }
 
-//Check isUserAuth : /api/user/is-auth  or(Get-User-Profile)
+//Check isUserAuth : /api/user/is-auth   (User-data-Update-to-database)
 export const isUserAuth = async (req, res)=>{
   try {
     const { userId } = req.body; 

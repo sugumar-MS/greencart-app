@@ -51,7 +51,7 @@ const SellerLayout = () => {
             <div className="flex">
 
                 {/* Sidebar */}
-                <div className="md:w-64 w-16 border-r h-[95vh] text-base border-gray-300 pt-4 flex flex-col">
+                <div className="md:w-68 w-16 border-r h-[95vh] text-base border-gray-300 pt-4 flex flex-col">
                     {sidebarLinks.map((item) => (
                         <NavLink
                             to={item.path}
@@ -62,7 +62,7 @@ const SellerLayout = () => {
                                     ? "border-r-4 md:border-r-[6px] bg-primary/10 border-primary text-primary"
                                     : "hover:bg-gray-100/90 border-white text-gray-700"
                                 }`
-                            }
+                         }
                         >
                             <img src={item.icon} alt="" />
                             <p className="md:block hidden text-center">{item.name}</p>

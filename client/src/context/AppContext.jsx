@@ -29,7 +29,7 @@ export const AppContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState({});
   const [searchQuery, setSearchQuery] = useState({});
 
-  // Fetch Seller Status + data stay on after Refresh
+  // Fetch Seller Auth Status + Update Seller Data to Database on Mongodb + data stay on after Refresh
   const fetchSeller = async () =>{
     try {
       const { data } = await axios.get('/api/seller/is-auth');
@@ -43,7 +43,7 @@ export const AppContextProvider = ({ children }) => {
     }
   }
 
-  // Fetch User Auth Status , User Data and Cart Items + data stay on after Refresh
+  // Fetch User Auth Status , Update User Data and Cart Items to Database on Mongodb + data stay on after Refresh
   const fetchUser = async () =>{
     try {
       const { data } = await axios.get('/api/user/is-auth');

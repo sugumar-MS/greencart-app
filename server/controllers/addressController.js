@@ -1,7 +1,7 @@
 import Address from "../models/Address.js"
 
 
-//Add Address : /api/addres/add
+//Add New Address : /api/addres/add
 export const addAddress = async (req, res) => {
    try {
     const { address, userId } = req.body
@@ -13,8 +13,8 @@ export const addAddress = async (req, res) => {
    }
 }
 
-// Get Address : /api/address/get
-export const getAddres = async (req, res) => {
+// Get All Address of logged-in user : /api/address/get
+export const getAddress = async (req, res) => {
    try {
     const { userId } = req.body
     const addresses = await Address.find({userId})

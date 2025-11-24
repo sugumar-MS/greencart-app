@@ -3,10 +3,11 @@ import { isUserAuth, login, logout, register } from '../controllers/userControll
 import authUser from '../middlewares/authUser.js';
  
 const userRouter = express.Router();
-
-userRouter.post('/register', register)
-userRouter.post('/login', login)
-userRouter.get('/is-auth', authUser, isUserAuth)
-userRouter.get('/logout', authUser, logout)
+//PUBLIC ROUTES
+userRouter.post('/register', register) // Create new user
+userRouter.post('/login', login) // Login user
+//PROTECTED ROUTES
+userRouter.get('/is-auth', authUser, isUserAuth) // Validate authenticated user
+userRouter.get('/logout', authUser, logout) // Logout user
 
 export default userRouter

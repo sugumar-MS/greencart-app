@@ -5,10 +5,13 @@ import { addProduct, changeStock, productById, productList } from '../controller
 
 const productRouter = express.Router();
 
+// SELLER PROTECTED ROUTES
 productRouter.post('/add', upload.array(["images"]), authSeller, addProduct)
+productRouter.post('/stock', authSeller, changeStock)
+// PUBLIC ROUTES
 productRouter.get('/list', productList)
 productRouter.get('/id', productById)
-productRouter.post('/stock', authSeller, changeStock)
+
 
 export default productRouter;
 

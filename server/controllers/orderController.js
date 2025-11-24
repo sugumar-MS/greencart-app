@@ -188,3 +188,21 @@ export const getAllOrders = async (req, res) => {
         return res.json({success: false, message: error.message});
     }
 }
+
+// Update Order Status from Seller Panel : /api/order/update-status
+export const updateOrderStatus = async (req, res) => {
+    try {
+        const { orderId, status } = req.body;
+
+        if (!orderId || !status) {
+            return res.json({ success: false, message: "Missing orderId or status" });
+        }
+
+        await Order.findByIdAndUpdate(orderId, { status });
+
+        return res.json({ success: true, message: "Order status updated successfully" });
+
+    } catch (error) {
+        return res.json({ success: false, message: error.message });
+    }
+};

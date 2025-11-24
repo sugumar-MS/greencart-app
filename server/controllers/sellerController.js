@@ -26,7 +26,7 @@ export const sellerLogin = async (req, res) =>{
    }
 }
 
-//Check isSellerAuth : /api/seller/is-auth  or(Get-seller-Profile-Data)
+//Check isSellerAuth : /api/seller/is-auth   (Seller-data-Update-to-database)
 export const isSellerAuth = async (req, res)=>{
   try {
     return res.json({success:true})
